@@ -1,16 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:todoappgetx/controller/Completed_Controller.dart';
-import 'package:todoappgetx/controller/Todo_Controller.dart';
-import '../model/Todo.dart';
-import 'Details_Page.dart';
+import 'dart:js';
 
-class CompletedPage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:todoappgetx/controller/Todo_Controller.dart';
+import 'package:todoappgetx/ui/Completed_Page.dart';
+import 'package:todoappgetx/ui/Details_Page.dart';
+import 'package:todoappgetx/ui/NotCompleted_Page.dart';
+
+class HomePage extends StatelessWidget {
   final TodoController todoController = Get.put(TodoController());
-  //const CompletedPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,9 @@ class CompletedPage extends StatelessWidget {
                         Expanded(
                           child: Center(
                             child: ElevatedButton.icon(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(NotCompletedPage());
+                              },
                               icon: Icon(Icons.timer, size: 18),
                               label: Text("Todo"),
                             ),
@@ -42,7 +42,9 @@ class CompletedPage extends StatelessWidget {
                         Expanded(
                           child: Center(
                             child: ElevatedButton.icon(
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.to(CompletedPage());
+                              },
                               icon: Icon(Icons.check, size: 18),
                               label: Text("Done"),
                             ),
