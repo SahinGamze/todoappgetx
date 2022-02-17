@@ -1,11 +1,9 @@
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'dart:convert';
-import 'package:todoappgetx/model/Todo.dart';
 
-class Todo_Service {
+class TodoService {
   final http.Client httpClient;
-  Todo_Service({
+  TodoService({
     required this.httpClient,
   });
 
@@ -16,8 +14,8 @@ class Todo_Service {
       response = await http.get(url);
       return response;
     } catch (error, stacktrace) {
-      print("Exception occured: $error stackTrace: $stacktrace");
-      throw new Exception('error getting quote');
+      //print("Exception occured: $error stackTrace: $stacktrace");
+      throw Exception('error getting quote');
     }
   }
 }

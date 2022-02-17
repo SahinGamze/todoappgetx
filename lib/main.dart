@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:todoappgetx/data/Todo_Repository.dart';
 import 'package:todoappgetx/data/Todo_Service.dart';
-import 'package:todoappgetx/ui/Details_Page.dart';
 import 'package:todoappgetx/ui/Home_Page.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  final Todo_Repository repository = Todo_Repository(
-    todo_service: Todo_Service(
+  final TodoRepository repository = TodoRepository(
+    todoService: TodoService(
       httpClient: http.Client(),
     ),
   );
@@ -19,7 +18,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final Todo_Repository repository;
+  final TodoRepository repository;
 
   const MyApp({Key? key, required this.repository}) : super(key: key);
 

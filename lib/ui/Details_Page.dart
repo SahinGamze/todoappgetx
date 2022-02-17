@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../model/Todo.dart';
+import 'package:todoappgetx/model/Todo.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({Key? key, required this.todo}) : super(key: key);
@@ -11,7 +10,7 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todo Detail'),
+        title: const Text('Todo Detail'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -19,7 +18,7 @@ class DetailsPage extends StatelessWidget {
           children: [
             Text(todo.userId.toString()),
             Text(todo.title.toString()),
-            Checkbox(value: todo.completed, onChanged: (newValue) {}),
+            Checkbox(value: todo.completed!, onChanged: null),
           ],
         ),
       ),
